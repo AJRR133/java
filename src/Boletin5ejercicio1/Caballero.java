@@ -22,4 +22,7 @@ public class Caballero extends Personaje{
 	protected boolean esatacado(Personaje p) {
 		return p instanceof Mago || p instanceof Arquero;
 	}
+	protected boolean esatacado(Personaje p, int distancia) {
+		return  p instanceof Mago || (p instanceof Arquero && distancia <100);
+	}
 }
