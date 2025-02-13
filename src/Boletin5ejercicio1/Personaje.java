@@ -1,5 +1,7 @@
 package Boletin5ejercicio1;
 
+import java.util.Objects;
+
 public class Personaje {
 
 	private String nombre;
@@ -43,7 +45,29 @@ public class Personaje {
 	public String toString() {
 		return "Personaje [nombre=" + nombre + ", nivel=" + nivel + ", hp=" + hp + ", arma=" + arma + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(arma, hp, nivel, nombre);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Personaje other = (Personaje) obj;
+		return Objects.equals(arma, other.arma) && hp == other.hp && nivel == other.nivel
+				&& Objects.equals(nombre, other.nombre);
+	}
 	
-	
+	protected boolean esatacado(Personaje p) {
+		return true;
+	}
+	protected boolean esatacado(Personaje p, int distancia) {
+		return true;
+	}
 
+	
 }
