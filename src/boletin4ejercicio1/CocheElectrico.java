@@ -1,5 +1,7 @@
 package boletin4ejercicio1;
 
+import boletin4ejercicio1.Automovil.Calieco;
+
 public class CocheElectrico extends Vehiculos {
 
 	private String tipobateria;
@@ -8,6 +10,8 @@ public class CocheElectrico extends Vehiculos {
 		super(dueno, numpuertas, numruedas);
 		this.tipobateria = tipobateria;
 	}
+
+	
 
 	public String getTipobateria() {
 		return tipobateria;

@@ -1,5 +1,7 @@
 package boletin4ejercicio1;
 
+
+
 public class Vehiculos {
 	protected String dueno;
 	protected int numpuertas;
