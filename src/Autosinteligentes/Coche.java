@@ -102,4 +102,6 @@ public class Coche {
 		this.sensor = sensor;
 	}
 	
+	
+	protected void debeparar()
 }
