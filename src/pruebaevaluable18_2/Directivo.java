@@ -2,7 +2,7 @@ package pruebaevaluable18_2;
 
 import java.util.Objects;
 
-public class Directivo extends Empleados{
+public final class Directivo extends Empleados{
 
 	private int porcentajeproductividad ;
 
@@ -39,13 +39,10 @@ public class Directivo extends Empleados{
 		this.porcentajeproductividad = porcentajeproductividad;
 	}
 
-	@Override
-	public String toString() {
-		return "DNI:"+getDni()+"-Nombre:"+getNombre()+"-Salario:"+Calcularsalario();
-	}
 	
 	
-	protected double Calcularsalario() {
+	
+	protected double calcularSalario() {
 		double salariototal = getSalariobase()+(getSalariobase()*getPorcentajeproductividad()/100);
 		return salariototal;
 	}

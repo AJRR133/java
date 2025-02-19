@@ -39,16 +39,13 @@ public class Administrativo extends Empleados{
 		this.Extraproductividad = extraproductividad;
 	}
 
-	
-	protected double Calcularsalario() {
+	@Override	
+	protected double calcularSalario() {
 		double salariototal = (getSalariobase()+getExtraproductividad());
 		return salariototal;
 	}
 
-	@Override
-	public String toString() {
-		return "DNI:"+getDni()+"-Nombre:"+getNombre()+"-Salario:"+Calcularsalario();
-	}
+	
 	
 	
 	

@@ -58,10 +58,8 @@ public class Equipo {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(mac, nombre, Numincidente, so);
+		return Objects.hash(Numincidente, mac, nombre, so, usuario);
 	}
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,9 +69,10 @@ public class Equipo {
 		if (getClass() != obj.getClass())
 			return false;
 		Equipo other = (Equipo) obj;
-		//cambiar a equals
-		return mac == other.mac;
+		return  Objects.equals(mac, other.mac);
+				
 	}
+	
 	
 	
 	

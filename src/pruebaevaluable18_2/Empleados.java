@@ -43,8 +43,7 @@ public class Empleados {
 		if (getClass() != obj.getClass())
 			return false;
 		Empleados other = (Empleados) obj;
-		return Objects.equals(Dni, other.Dni) && Objects.equals(Nombre, other.Nombre)
-				&& Double.doubleToLongBits(salariobase) == Double.doubleToLongBits(other.salariobase);
+		return Objects.equals(Dni, other.Dni);
 	}
 	public Empleados(String dni, String nombre, double salariobase) {
 		super();
@@ -54,8 +53,13 @@ public class Empleados {
 	}
 	@Override
 	public String toString() {
-		return "DNI:"+getDni()+"-Nombre:"+getNombre()+"-Salario:"+getSalariobase();
+		return "DNI:"+getDni()+"-Nombre:"+getNombre()+"-Salario:"+this.calcularSalario();
 	}
+	
+	protected double calcularSalario() {
+		return salariobase;
+	}
+
 	
 	/*protected double Calcularsalario(Empleados p) {
 		if( p instanceof Administrativo) {
@@ -66,7 +70,7 @@ public class Empleados {
 		}
 	}*/
 
-	private boolean validardniempleados(Empleados p1, Empleados p2) {
-		return Dni !=null && p1.Dni.equals(p2.getDni());
-	}
+	//private boolean validardniempleados(Empleados p1, Empleados p2) {
+	//	return Dni !=null && p1.Dni.equals(p2.getDni());
+	//}
 }
