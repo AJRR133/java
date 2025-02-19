@@ -71,6 +71,7 @@ public class Equipo {
 		if (getClass() != obj.getClass())
 			return false;
 		Equipo other = (Equipo) obj;
+		//cambiar a equals
 		return mac == other.mac;
 	}
 	
