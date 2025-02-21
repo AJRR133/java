@@ -17,7 +17,10 @@ public class Usuario {
 		return dni;
 	}
 	protected void setDni(String dni) {
-		this.dni = dni;
+		if(dni.matches("\\d{8}[a-zA-Z]{1}")){
+			this.dni = dni;
+		}
+		
 	}
 	protected String getDepartamento() {
 		return Departamento;
@@ -28,8 +31,8 @@ public class Usuario {
 	public Usuario(String nombre, String dni, String departamento) {
 		super();
 		this.nombre = nombre;
-		this.dni = dni;
 		Departamento = departamento;
+		setDni(dni);
 	}
 	@Override
 	public int hashCode() {
