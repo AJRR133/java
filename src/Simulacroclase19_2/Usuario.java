@@ -33,7 +33,7 @@ public class Usuario {
 		this.nombre = nombre;
 		Departamento = departamento;
 		setDni(dni);
-	}
+	} 
 	@Override
 	public int hashCode() {
 		return Objects.hash(Departamento, dni, nombre);

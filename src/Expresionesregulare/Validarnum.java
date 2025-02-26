@@ -6,13 +6,13 @@ public class Validarnum {
 		// TODO Auto-generated method stub
 
 		String num = "12345678A";
-		String caracter = "abc";
+		String caracter = "abc@12.es";
 		
 		//validadni
 		System.out.println(num.matches("\\d{8}[a-zA-Z]{1}"));
 		System.out.println(num.matches("[0-9]*"));
 
-		System.out.println(caracter.matches("[a-zA-Z]{1}"));
+		System.out.println(caracter.matches("[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]"));
 
 		
 	}
