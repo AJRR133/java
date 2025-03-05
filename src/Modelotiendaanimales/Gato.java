@@ -41,6 +41,9 @@ public class Gato extends Mascota {
 		this.pelolargo = pelolargo;
 	}
 
+
+	
+
 	
 	
 	

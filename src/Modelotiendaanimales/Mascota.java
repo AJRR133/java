@@ -69,8 +69,7 @@ public abstract class Mascota {
 		if (getClass() != obj.getClass())
 			return false;
 		Mascota other = (Mascota) obj;
-		return edad == other.edad && Objects.equals(fechanacimiento, other.fechanacimiento)
-				&& Objects.equals(nombre, other.nombre);
+		return edad == other.edad && Objects.equals(nombre, other.nombre);
 	}
 
 	public Mascota(String nombre, String estado, int edad, LocalDate fechanacimiento) {
@@ -81,6 +80,9 @@ public abstract class Mascota {
 		this.fechanacimiento = fechanacimiento;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.muestra();
+	}
 	
 }
