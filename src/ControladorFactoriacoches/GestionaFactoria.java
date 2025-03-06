@@ -20,6 +20,20 @@ public class GestionaFactoria {
 		inventarioRobot[contador] = e1;
 		contador = contador+1;
 		System.out.println(Arrays.toString(inventarioRobot));
+		
+		
+		int contadorwi = 0;
+		Dispositivo [] inventariodispositivo  = new Dispositivo [20];
+		Dispositivo ss = new Sensor(1, null, null, null);
+		Dispositivo c1 = new Camara(2, null, null, null);
+		Dispositivo pp = new Puerta(3, null, null, null);
+		inventariodispositivo[contadorwi] = ss;
+		contadorwi = contadorwi+1;
+		inventariodispositivo[contadorwi] = c1;
+		contadorwi = contadorwi+1;
+		inventariodispositivo[contadorwi] = pp;
+		contadorwi = contadorwi+1;
+		System.out.println(Arrays.toString(inventariodispositivo));
 	}
 
 }
