@@ -7,8 +7,8 @@ public abstract class Animal {
 	private String nombreespecie;
 	private Familia tipofamilia;
 	private String habitat;
-	private String [] animalescome;
-	private String [] animalesescomido;
+	private Animal [] animalescome;
+	private Animal [] animalesescomido;
 	
 	public abstract boolean atacar(Animal a);
 	public abstract boolean huir(Animal a);
@@ -30,16 +30,16 @@ public abstract class Animal {
 	public void setHabitat(String habitat) {
 		this.habitat = habitat;
 	}
-	public String[] getAnimalescome() {
+	public Animal[] getAnimalescome() {
 		return animalescome;
 	}
-	public void setAnimalescome(String[] animalescome) {
+	public void setAnimalescome(Animal[] animalescome) {
 		this.animalescome = animalescome;
 	}
-	public String[] getAnimalesescomido() {
+	public Animal[] getAnimalesescomido() {
 		return animalesescomido;
 	}
-	public void setAnimalesescomido(String[] animalesescomido) {
+	public void setAnimalesescomido(Animal[] animalesescomido) {
 		this.animalesescomido = animalesescomido;
 	}
 	@Override
@@ -48,14 +48,20 @@ public abstract class Animal {
 				+ ", animalescome=" + Arrays.toString(animalescome) + ", animalesescomido="
 				+ Arrays.toString(animalesescomido) + "]";
 	}
-	public Animal(String nombreespecie, Familia tipofamilia, String habitat, String[] animalescome,
-			String[] animalesescomido) {
+	public Animal(String nombreespecie, Familia tipofamilia, String habitat, Animal[] animalescome,
+			Animal[] animalesescomido) {
 		super();
 		this.nombreespecie = nombreespecie;
 		this.tipofamilia = tipofamilia;
 		this.habitat = habitat;
 		this.animalescome = animalescome;
 		this.animalesescomido = animalesescomido;
+	}
+	public Animal() {
+		super();
+		this.setAnimalescome(new Animal [10]);
+		this.setAnimalesescomido(new Animal [10]);
+		// TODO Auto-generated constructor stub
 	}
 
 	

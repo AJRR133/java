@@ -2,11 +2,24 @@ package Modelocadenaalimenticia;
 
 public class Roedor extends Animal {
 
-	public Roedor(String nombreespecie, Familia tipofamilia, String habitat, String[] animalescome,
-			String[] animalesescomido) {
+	public Roedor(String nombreespecie, Familia tipofamilia, String habitat, Animal[] animalescome,
+			Animal[] animalesescomido) {
 		super(nombreespecie, tipofamilia, habitat, animalescome, animalesescomido);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+
+
+	public Roedor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 
 	@Override
 	public boolean atacar(Animal a) {

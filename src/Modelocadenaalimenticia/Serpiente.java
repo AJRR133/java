@@ -2,11 +2,18 @@ package Modelocadenaalimenticia;
 
 public class Serpiente extends Animal {
 
-	public Serpiente(String nombreespecie, Familia tipofamilia, String habitat, String[] animalescome,
-			String[] animalesescomido) {
+	public Serpiente(String nombreespecie, Familia tipofamilia, String habitat, Animal[] animalescome,
+			Animal[] animalesescomido) {
 		super(nombreespecie, tipofamilia, habitat, animalescome, animalesescomido);
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public Serpiente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	@Override
 	public boolean atacar(Animal a) {
