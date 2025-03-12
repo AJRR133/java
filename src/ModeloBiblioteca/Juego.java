@@ -1,6 +1,6 @@
 package ModeloBiblioteca;
 
-public class Juegos extends ElementosMultimedia implements Iprestable {
+public class Juego extends ElementosMultimedia implements Iprestable {
 
 	private int numfases;
 
@@ -12,7 +12,7 @@ public class Juegos extends ElementosMultimedia implements Iprestable {
 		this.numfases = numfases;
 	}
 
-	public Juegos(int id, String ubicacion, String nombre, String genero, int numfases) {
+	public Juego(int id, String ubicacion, String nombre, String genero, int numfases) {
 		super(id, ubicacion, nombre, genero);
 		this.numfases = numfases;
 	}
@@ -22,7 +22,13 @@ public class Juegos extends ElementosMultimedia implements Iprestable {
 		return "Juegos [numfases=" + numfases + ", getNombre()=" + getNombre() + ", getGenero()=" + getGenero()
 				+ ", getId()=" + getId() + ", getUbicacion()=" + getUbicacion() + "]";
 	}
-	
+
+	@Override
+	public boolean estaDisponible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 }

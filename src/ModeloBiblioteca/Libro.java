@@ -1,12 +1,12 @@
 package ModeloBiblioteca;
 
-public class Libros extends Recursos implements Iprestable {
+public class Libro extends Recurso  {
 
 	private String autor;
 	private String editorial;
 	private String genero;
 
-	public Libros(int id, String ubicacion, String autor, String editorial, String genero) {
+	public Libro(int id, String ubicacion, String autor, String editorial, String genero) {
 		super(id, ubicacion);
 		this.autor = autor;
 		this.editorial = editorial;

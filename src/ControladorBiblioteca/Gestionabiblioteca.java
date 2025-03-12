@@ -6,10 +6,10 @@ public class Gestionabiblioteca {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-	Libros l1 = new Libros(1, "biblioteca", "Paquito", "Planeta", "Mas");
-	Peliculas p1 = new Peliculas(2, "biblioteca", "terminator", "accion",100);
+	Libro l1 = new Libro(1, "biblioteca", "Paquito", "Planeta", "Mas");
+	Pelicula p1 = new Pelicula(2, "biblioteca", "terminator", "accion",100);
 	Audio a1 = new Audio(3, "Spoty", "El patio", "f",4);
-	Juegos j1 = new Juegos(4, "", "", "", 4);
+	Juego j1 = new Juego(4, "", "", "", 4);
 
 	System.out.println(l1);
 	System.out.println(p1);

@@ -1,6 +1,6 @@
 package ModeloBiblioteca;
 
-public class Audio extends ElementosMultimedia implements Iprestable {
+public class Audio extends ElementosMultimedia {
 	
 	private int duracionminutos;
 	
@@ -22,6 +22,14 @@ public class Audio extends ElementosMultimedia implements Iprestable {
 		return "Audio [duracionminutos=" + duracionminutos + ", getNombre()=" + getNombre() + ", getGenero()="
 				+ getGenero() + ", getId()=" + getId() + ", getUbicacion()=" + getUbicacion() + "]";
 	}
+
+	@Override
+	public boolean estaDisponible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 
 	
 	

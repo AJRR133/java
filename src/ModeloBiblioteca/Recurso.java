@@ -1,13 +1,13 @@
 package ModeloBiblioteca;
 
-public abstract class Recursos implements Iprestable {
+public abstract class Recurso implements Iprestable {
 
 	
 	private int id;
 	private String ubicacion;
 	
 
-	public Recursos(int id, String ubicacion) {
+	public Recurso(int id, String ubicacion) {
 		super();
 		this.id = id;
 		this.ubicacion = ubicacion;

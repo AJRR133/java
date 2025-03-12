@@ -1,10 +1,17 @@
 package ModeloBiblioteca;
 
-public class ElementosMultimedia extends Recursos implements Iprestable {
+public abstract class ElementosMultimedia extends Recurso  {
 
 	private String nombre;
 	private String genero;
+	private int diasprestamos;
 	
+	public int getDiasprestamos() {
+		return diasprestamos;
+	}
+	public void setDiasprestamos(int diasprestamos) {
+		this.diasprestamos = diasprestamos;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -21,16 +28,13 @@ public class ElementosMultimedia extends Recursos implements Iprestable {
 		super(id, ubicacion);
 		this.nombre = nombre;
 		this.genero = genero;
+		this.diasprestamos = 10;
 	}
-	@Override
-	public boolean estaDisponible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 	@Override
 	public int devuelvediasdeprestamos() {
 		// TODO Auto-generated method stub
-		return 10;
+		return diasprestamos;
 	}
 	
 	

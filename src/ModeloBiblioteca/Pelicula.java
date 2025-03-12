@@ -1,11 +1,11 @@
 package ModeloBiblioteca;
 
-public class Peliculas extends ElementosMultimedia {
+public class Pelicula extends ElementosMultimedia {
 
 	private int duracionminutos;
 	
 	
-	public Peliculas(int id, String ubicacion, String nombre, String genero, int duracionminutos) {
+	public Pelicula(int id, String ubicacion, String nombre, String genero, int duracionminutos) {
 		super(id, ubicacion, nombre, genero);
 		this.duracionminutos = duracionminutos;
 	}
@@ -23,6 +23,14 @@ public class Peliculas extends ElementosMultimedia {
 		return "Peliculas [duracionminutos=" + duracionminutos + ", getNombre()=" + getNombre() + ", getGenero()="
 				+ getGenero() + ", getId()=" + getId() + ", getUbicacion()=" + getUbicacion() + "]";
 	}
+
+	@Override
+	public boolean estaDisponible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	 
 
 	
 
