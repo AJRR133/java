@@ -25,6 +25,7 @@ public class GestionaIncidentesequipos {
 		Incidencia in6 = new Incidencia(123,"fallo1","brevedesc",LocalDate.of(2024, 2, 15),LocalDate.of(2025, 2, 15),Estado.CERRADA,Criticidad.MEDIA,equipo1);
 
 		Incidencia [] listaincidencia = {in1,in2,in3,in4,in5,in6};
+		System.out.println(in1.toString());
 	}
 	
 	//public void imprimeurgente(Incidencia in) {

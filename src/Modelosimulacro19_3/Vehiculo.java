@@ -1,6 +1,5 @@
 package Modelosimulacro19_3;
 
-import java.lang.reflect.Array;
 
 public abstract class Vehiculo implements IAlquilable{
 	int id;
@@ -8,26 +7,21 @@ public abstract class Vehiculo implements IAlquilable{
 	boolean disponible;
 	
 	
-	
-	double getImporetotalgenerado() {
-		return 0;
-	}
-
-	@Override
 	public boolean estaalquilado() {
-		if(Array. == Estadoalquiler.ENTREGADO) {
-			
+		boolean alquilado = true;
+		if(this.disponible=false) {
+			alquilado = true;
+		} else {
+			alquilado = false;
 		}
-		return false;
-	}
+		return alquilado;}
 
-
-
-	@Override
-	public double getPreciopordia() {
-		// TODO Auto-generated method stub
-		return 0;
+	double getImporetotalgenerado() {
+		double importetotal = 0;
+	for(int i = 0; alquileres.length >0 ; i++)
+		 importetotal = importetotal +(alquileres[i].numdias*getPreciopordia());
+		return importetotal;
 	}
 	
 	
-}
+	}

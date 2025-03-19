@@ -84,17 +84,15 @@ public class Patinete extends Vehiculo {
 	}
 
 
-	@Override
-	public boolean estaalquilado() {
-		if(getEstado() == Estadoalquiler.ENTREGADO)
-		return false;
-	}
-
 	
+	
+
+
 	@Override
 	public double getPreciopordia() {
-		// TODO Auto-generated method stub
-		return 0;
+		 double preciopordia = 50;
+	
+		return preciopordia;
 	}
 
 }

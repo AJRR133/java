@@ -1,6 +1,6 @@
 package Modelosimulacro19_3;
 
-public class VehiculoCombustible extends Vehiculo {
+public abstract class   VehiculoCombustible extends Vehiculo {
 	String matricula;
 	boolean esdiesel;
 	String marca;
@@ -31,6 +31,7 @@ public class VehiculoCombustible extends Vehiculo {
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+	
 	
 	
 

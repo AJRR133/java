@@ -23,7 +23,7 @@ public class Incidencia {
 		this.fecharegistro = fecharegistro;
 		setFechafin(fechafin);
 		setEstado(estado);
-		criticidad = criticidad;
+		this.criticidad = criticidad;
 		this.equipo = equipo;
 	}
 	@Override
