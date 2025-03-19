@@ -3,7 +3,7 @@ package Modelosimulacro19_3;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Alquiler {
+public class Alquiler {
 	int id;
 	Vehiculo datosvehiculo;
 	int numpermiso;
@@ -78,6 +78,8 @@ public abstract class Alquiler {
 				&& Objects.equals(fecharegistro, other.fecharegistro);
 	}
 	
-	abstract double getimportegeneradporalquiler();
+	 double getimportegeneradporalquiler() {
+		 return  0; 
+	 }
 }
 	

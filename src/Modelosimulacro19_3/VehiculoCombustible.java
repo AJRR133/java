@@ -1,5 +1,7 @@
 package Modelosimulacro19_3;
 
+import java.util.Objects;
+
 public abstract class   VehiculoCombustible extends Vehiculo {
 	String matricula;
 	boolean esdiesel;
@@ -30,6 +32,21 @@ public abstract class   VehiculoCombustible extends Vehiculo {
 	}
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(matricula);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		VehiculoCombustible other = (VehiculoCombustible) obj;
+		return Objects.equals(matricula, other.matricula);
 	}
 	
 	
