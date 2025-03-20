@@ -55,6 +55,11 @@ public class Prueba {
 		this.fechaprueba = fechaprueba;
 		Estadopru = estadopru;
 	}
+	@Override
+	public String toString() {
+		return "Prueba [id=" + id + ", lugar=" + lugar + ", fechaprueba=" + fechaprueba + ", Estadopru=" + Estadopru
+				+ "]";
+	}
 	
 	
 	

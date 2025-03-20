@@ -69,7 +69,7 @@ public abstract class Deportista implements ICompeticion {
 				&& Double.doubleToLongBits(peso) == Double.doubleToLongBits(other.peso)
 				&& Arrays.equals(pruebas, other.pruebas);
 	}
-	public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
+	/*public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
 		super();
 		this.nombre = nombre;
 		this.pais = pais;
@@ -77,6 +77,16 @@ public abstract class Deportista implements ICompeticion {
 		this.peso = peso;
 		this.altura = altura;
 		this.pruebas = new Prueba[50];
+	}*/
+	
+	public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
+		super();
+		this.nombre = nombre;
+		this.pais = pais;
+		this.edad = edad;
+		this.peso = peso;
+		this.altura = altura;
+		this.pruebas = pruebas;
 	}
 	@Override
 	public String toString() {
@@ -105,15 +115,30 @@ public abstract class Deportista implements ICompeticion {
 		return 0;
 	}
 	
-	void añadirprueba(Prueba p) throws CompeticionException {
+	public void añadirprueba(Prueba p) throws CompeticionException {
 		for(int i = 0; i<pruebas.length;i++) {
-			if(p == null || p.equals(pruebas[i])) {
-				throw new CompeticionException("No puedes añadir una prueba repetida");
-			} else {
+			 
+			if(p != null && p.equals(pruebas[i])||(p != null && p.Estadopru.equals(Estadoprueba.PLANIFICADA) && p.fechaprueba.isBefore(LocalDate.now()))) {
+				throw new CompeticionException("No puedes añadir una prueba repetida ni con una fecha pasada siendo planificada");
+			} else if(pruebas[i]==null) {
 				pruebas[i] = p;
 			}
 		}
+		}
 			
-		
+	public Prueba proximaprueba() {
+		Prueba pu = null;
+		for(int i = 0; i<pruebas.length;i++) {
+			
+			if(pruebas[i].fechaprueba.isAfter(pruebas[i+1].fechaprueba)&& pruebas[i].Estadopru.equals(Estadoprueba.PLANIFICADA)) {
+				pu = pruebas[i];
+			}
+		}
+		return  pu ;
 	}
+	
+	
+	
+	
+	
 }
