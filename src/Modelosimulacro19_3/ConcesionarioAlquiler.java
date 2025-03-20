@@ -28,8 +28,8 @@ public class ConcesionarioAlquiler {
     void realizaralquiler(Alquiler a) {
     	
     	for (int i = 0; i < vehiculos.length; i++) {
-    		if(vehiculos[i].alquileres[i].getFecharegistro().isBefore(LocalDate.now())) {
-    			System.out.println("Vehiculo alquilado, hgracias");
+    		if(vehiculos[i] != null && vehiculos[i].alquileres[i].getFecharegistro().isBefore(LocalDate.now())) {
+    			System.out.println("Vehiculo alquilado, gracias");
     		} else {
     			System.out.println("el vehiculo no esta disponible");
     		}

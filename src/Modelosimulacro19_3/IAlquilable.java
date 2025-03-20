@@ -4,5 +4,5 @@ public interface IAlquilable {
 	
 	
 	boolean estaalquilado();
-	double getPreciopordia();
+	
 }

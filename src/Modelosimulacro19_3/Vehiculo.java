@@ -9,6 +9,30 @@ public abstract class Vehiculo implements IAlquilable{
 	boolean disponible;
 	
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Alquiler[] getAlquileres() {
+		return alquileres;
+	}
+
+	public void setAlquileres(Alquiler[] alquileres) {
+		this.alquileres = alquileres;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
 	public boolean estaalquilado() {
 		boolean alquilado = true;
 		if(this.disponible=false) {
@@ -18,13 +42,20 @@ public abstract class Vehiculo implements IAlquilable{
 		}
 		return alquilado;}
 
-	double getImporetotalgenerado() {
+	/*double getImporetotalgenerado() {
 		double importetotal = 0;
 	for(int i = 0; alquileres.length >0 ; i++)
-		 importetotal = importetotal +(alquileres[i].numdias*getPreciopordia());
+		if(alquileres[i].Estado.ENTREGADO && alquileres[i].Estado. ) {
+		 importetotal = importetotal +(alquileres[i].numdias*getPreciopordia());}
+		return importetotal;*/
+
+	double getImporetotalgenerado() {
+		double importetotal = 0;
+	for(Alquiler a : getAlquileres())
+		if(a !=null && a.getEstado().equals(Estadoalquiler.ENTREGADO) && a.getEstado().equals(Estadoalquiler.CERRADO)) {
+		 importetotal = importetotal +(alquileres[i].numdias*getPreciopordia());}
 		return importetotal;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

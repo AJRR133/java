@@ -84,15 +84,14 @@ public class Patinete extends Vehiculo {
 	}
 
 
-	
-	
-
-
 	@Override
 	public double getPreciopordia() {
 		 double preciopordia = 50;
 	
 		return preciopordia;
 	}
+
+
+	
 
 }
