@@ -69,7 +69,7 @@ public abstract class Deportista implements ICompeticion {
 				&& Double.doubleToLongBits(peso) == Double.doubleToLongBits(other.peso)
 				&& Arrays.equals(pruebas, other.pruebas);
 	}
-	/*public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
+	public Deportista(String nombre, String pais, int edad, double peso, double altura ) {
 		super();
 		this.nombre = nombre;
 		this.pais = pais;
@@ -77,9 +77,9 @@ public abstract class Deportista implements ICompeticion {
 		this.peso = peso;
 		this.altura = altura;
 		this.pruebas = new Prueba[50];
-	}*/
+	}
 	
-	public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
+	/*public Deportista(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
 		super();
 		this.nombre = nombre;
 		this.pais = pais;
@@ -87,7 +87,7 @@ public abstract class Deportista implements ICompeticion {
 		this.peso = peso;
 		this.altura = altura;
 		this.pruebas = pruebas;
-	}
+	}*/
 	@Override
 	public String toString() {
 		return "Deportistas [nombre=" + nombre + ", pais=" + pais + ", edad=" + edad + ", peso=" + peso + ", altura="
@@ -102,7 +102,8 @@ public abstract class Deportista implements ICompeticion {
 		return 0;
 	}
 	int getHorasentrenamiento(LocalDate F) {
-		return 0;
+		int diasentrenamiento = 0;
+		return diasentrenamiento;
 	}
 	@Override
 	public String competir() {
@@ -127,14 +128,14 @@ public abstract class Deportista implements ICompeticion {
 		}
 			
 	public Prueba proximaprueba() {
-		Prueba pu = null;
+		Prueba mascercana = pruebas[0];
 		for(int i = 0; i<pruebas.length;i++) {
 			
-			if(pruebas[i].fechaprueba.isAfter(pruebas[i+1].fechaprueba)&& pruebas[i].Estadopru.equals(Estadoprueba.PLANIFICADA)) {
-				pu = pruebas[i];
+			if(mascercana == null && pruebas[i] !=null && pruebas[i].getFechaprueba().isAfter(pruebas[i+1].fechaprueba)&& pruebas[i].Estadopru.equals(Estadoprueba.PLANIFICADA)) {
+				mascercana = pruebas[i];
 			}
 		}
-		return  pu ;
+		return  mascercana ;
 	}
 	
 	

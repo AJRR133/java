@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Nadador extends Deportista{
 
-	public Nadador(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
-		super(nombre, pais, edad, peso, altura, pruebas);
+	public Nadador(String nombre, String pais, int edad, double peso, double altura) {
+		super(nombre, pais, edad, peso, altura);
 	}
 
 	@Override

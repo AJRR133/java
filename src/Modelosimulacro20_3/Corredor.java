@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Corredor extends Deportista {
 
-	public Corredor(String nombre, String pais, int edad, double peso, double altura, Prueba[] pruebas) {
-		super(nombre, pais, edad, peso, altura, pruebas);
+	public Corredor(String nombre, String pais, int edad, double peso, double altura) {
+		super(nombre, pais, edad, peso, altura);
 		// TODO Auto-generated constructor stub
 	}
 
