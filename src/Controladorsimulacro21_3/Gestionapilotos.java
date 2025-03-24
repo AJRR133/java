@@ -6,7 +6,7 @@ import Modelosimulacro21_3.*;
 
 public class Gestionapilotos {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws Vueloexception {
 		// TODO Auto-generated method stub
 
 		Vuelo v1 = new Vuelo(1, "IBERIA", "Cancun", LocalDate.now(), 10, Estadovuelo.ENCURSO);
@@ -20,6 +20,7 @@ public class Gestionapilotos {
 	} catch (Vueloexception e) {
 		// TODO Auto-generated catch block
 		System.out.println((e.getMessage()));
+		throw e;
 	}
 	}
 
