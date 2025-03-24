@@ -9,7 +9,7 @@ public class Gestionapilotos {
 	public static void main(String[] args) throws Vueloexception {
 		// TODO Auto-generated method stub
 
-		Vuelo v1 = new Vuelo(1, "IBERIA", "Cancun", LocalDate.now(), 10, Estadovuelo.ENCURSO);
+		Vuelo v1 = new Vuelo(1, "IBERIA", "Cancun", LocalDate.now(), 6, Estadovuelo.ENCURSO);
 		
 		Piloto c1 = new Comercial("Juan", "Española", 56, 333, 10);
 		
@@ -22,8 +22,9 @@ public class Gestionapilotos {
 		System.out.println((e.getMessage()));
 		throw e;
 	}
+	System.out.println(c1.toString());
+	
 	}
-
 
 
 }

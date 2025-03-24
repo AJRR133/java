@@ -4,7 +4,7 @@ package Modelosimulacro21_3;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Piloto {
+public class Piloto implements IVuelo {
 	String nombre;
 	String nacionalidad;
 	int edad;
@@ -78,15 +78,32 @@ public class Piloto {
 				+ numlicencia + ", horasvuelo=" + horasvuelo + ", vuelos=" + Arrays.toString(vuelos) + "]";
 	}
 	
-	public void agregarvuelo(Vuelo v ) throws Vueloexception {
-		for(int i =0 ; i < vuelos.length; i++)
-		if(v.getDuracion()>8 && this instanceof Comercial == true) {
-			throw new Vueloexception("No puedes añadir un vuelo de mas de 8 horas a un piloto comercial");
-		} else if(v.equals(vuelos[i])) {
-			throw new Vueloexception("No puedes agregar un vuelo ya existente");
-		} else {
-			
+	public void agregarvuelo(Vuelo v) throws Vueloexception {
+	    if (v.getDuracion() > 8 && this instanceof Comercial) {
+	        throw new Vueloexception("No puedes añadir un vuelo de más de 8 horas a un piloto comercial");
+	    }
+	    for (int i = 0; i < vuelos.length; i++) {
+	        if (v.equals(vuelos[i])) {
+	            throw new Vueloexception("No puedes agregar un vuelo ya existente");}
+	    }
+	    boolean vueloAñadido = false;
+
+	    for (int i = 0; i < vuelos.length; i++) {
+	        if (vuelos[i] == null && vueloAñadido != true) {
+	            vuelos[i] = v;
+	            vueloAñadido = true;
+	        }
+	    }
+	}
+	@Override
+	public void operarvuelo() {
+		if(this instanceof Comercial) {
+			System.out.println("Este es el metodo de un piloto comercial");
+		}else if(this instanceof Internacional) {
+			System.out.println("Este es el metodo de un piloto Internacional");
+
 		}
 	}
+
 	
 }
