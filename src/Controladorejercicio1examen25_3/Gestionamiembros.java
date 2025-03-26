@@ -25,10 +25,11 @@ public class Gestionamiembros {
 		try {
 		e1.addamigos(e2);
 		e1.addamigos(p1);
-		e1.addamigos(p2);
-		e1.addamigos(p2);
+		/*e1.addamigos(p2);*/
+		/*e1.addamigos(p2);*/
 		} catch(GuzmanitosException e){
 			System.out.println(e.getMessage());
+			throw e;
 		}
 		System.out.println(Arrays.toString(e1.getAmigos()));
 		try {
@@ -51,6 +52,10 @@ public class Gestionamiembros {
 			System.out.println(e.getMessage());
 			throw e;
 		}
+	
+	
+	
+	
 	
 }}
 

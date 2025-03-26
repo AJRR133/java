@@ -1,16 +1,21 @@
-package Modeloejercicio1examen25_3;
+package Explicacionlsiats;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public abstract class  MiembroBase {
+import Modeloejercicio1examen25_3.GuzmanitosException;
 
+import java.util.List;
+
+public  class Miembro {
 	private int id;
 	private String email;
 	private String nombre;
 	private int contadorAmigos;
 	private static int contadoridentificador = 1;
-	protected MiembroBase [] amigos;
+	protected List <Miembro> amigos = new ArrayList <Miembro> ();
+	
 	public int getId() {
 		return id;
 	}
@@ -36,16 +41,17 @@ public abstract class  MiembroBase {
 		this.contadorAmigos = contadorAmigos;
 	}
 	
-	public MiembroBase[] getAmigos() {
+	public List<Miembro> getAmigos() {
 		return amigos;
 	}
-	public void setAmigos(MiembroBase[] amigos) {
+	public void setAmigos(List<Miembro> amigos) {
 		this.amigos = amigos;
 	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(email, id);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,18 +60,21 @@ public abstract class  MiembroBase {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MiembroBase other = (MiembroBase) obj;
+		Miembro other = (Miembro) obj;
 		return Objects.equals(email, other.email) && id == other.id;
 	}
-	public MiembroBase( String email, String nombre, int contadorAmigos, MiembroBase[] amigos) {
+	
+	
+	
+	
+	public Miembro(int id, String email, String nombre, int contadorAmigos, List<Miembro> amigos) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.nombre = nombre;
 		this.contadorAmigos = contadorAmigos;
-		this.amigos = amigos;
+		this.amigos = new ArrayList <Miembro> ();
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "MiembroBase [id=" + id + ", email=" + email + ", nombre=" + nombre + "]";
@@ -83,31 +92,24 @@ public abstract class  MiembroBase {
 		
 		
 	}*/
-	public void addamigos(MiembroBase m) throws GuzmanitosException{
+	public void addamigos(Miembro m) throws GuzmanitosException{
 		int num = 0;
 		if(Isamigo(m)) {
 			throw new GuzmanitosException("el miembro "+m.getEmail() +" ya esta en la lista de " + this.getEmail());
 		} else {
-			while(num<amigos.length && amigos[num] != null) {
-				num++;
-			}
-			amigos[num] = m;
+			amigos.add(m);
+			
 		}
 	}
 	
-	public boolean Isamigo(MiembroBase a) {
-		boolean amigo = false;
-		for(int i =0; i< amigos.length;i++) {
-			if(a.equals(amigos[i])) {
-				amigo = true;
-			}
-		}
-		return amigo;
+	public boolean Isamigo(Miembro a) {
+		return amigos.contains(a);
 	}
 	
-	abstract String gettipousuario();
 	
 	
 	
 	
 }
+
+
