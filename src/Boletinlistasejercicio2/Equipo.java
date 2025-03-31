@@ -42,11 +42,12 @@ public class Equipo {
 		Equipo other = (Equipo) obj;
 		return Objects.equals(alumnos, other.alumnos) && Objects.equals(nombre, other.nombre);
 	}
-	public Equipo(String nombre, Set<Alumno> alumnos) {
+	public Equipo(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.alumnos = alumnos;
+		this.alumnos = new HashSet<>();
 	}
+	
 	
 	public void addalumno(Alumno a) throws DeportivosException{
 		if(alumnos.contains(a)) {
@@ -82,7 +83,17 @@ public class Equipo {
 		}
 	}
 	
-	public void unionequipos(Alumno set<a>) {
-		
+	public Equipo unionequipos(Equipo e) {
+		Equipo union = new Equipo("Equipos unidos");
+		union.alumnos.addAll(this.alumnos);
+		union.alumnos.addAll(e.alumnos);
+		return union;
+	}
+	
+	public Equipo interseccionequipos(Equipo e) {
+		Equipo inter = new Equipo("Jugadores que forman parte de ambos equipos");
+		inter.alumnos.addAll(this.alumnos);
+		inter.alumnos.retainAll(e.alumnos);
+		return inter;
 	}
 }
