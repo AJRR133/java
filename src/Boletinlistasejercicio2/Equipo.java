@@ -8,7 +8,7 @@ import Explicacionlistasprovincias.Provincia;
 
 public class Equipo {
 	private String nombre;
-	private Set<Alumno> alumnos = new HashSet<Alumno>();
+	private Set<Alumno> alumnos;
 	
 	
 	public String getNombre() {
@@ -45,7 +45,7 @@ public class Equipo {
 	public Equipo(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.alumnos = new HashSet<>();
+		this.alumnos = new HashSet<Alumno>();
 	}
 	
 	
@@ -62,21 +62,22 @@ public class Equipo {
 		if(alumnos.contains(a)) {
 			alumnos.remove(a);
 		} else {
-			throw new DeportivosException("El alumno no existe");
+			throw new DeportivosException("El alumno no existe en este equipo");
 		}
 	}
 	
 	public Alumno pertenecealumno(Alumno a) {
-		Alumno b;
+		Alumno b = null;
 		if(alumnos.contains(a)) {
 			b = a;
-		} else  {
+		} /* else  {
 			b =null;
-		}
+		}*/
 		return b;
 	}
 	
 	public void listadoalumno() {
+		
 		for (Alumno cadena: alumnos)
 		{
 			System.out.println(cadena);
@@ -84,9 +85,11 @@ public class Equipo {
 	}
 	
 	public Equipo unionequipos(Equipo e) {
+		
 		Equipo union = new Equipo("Equipos unidos");
 		union.alumnos.addAll(this.alumnos);
 		union.alumnos.addAll(e.alumnos);
+		
 		return union;
 	}
 	

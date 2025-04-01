@@ -1,8 +1,10 @@
-package Boletinlistasejercicio2;
+package Explicacionordenacionliostas;
 
 import java.util.Objects;
 
-public class Alumno {
+
+
+public class Persona {
 	String nombre;
 	String dni;
 	
@@ -30,14 +32,14 @@ public class Alumno {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Alumno other = (Alumno) obj;
+		Persona other = (Persona) obj;
 		return Objects.equals(dni, other.dni) ;
 	}
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", dni=" + dni + "]";
+		return "Persona [nombre=" + nombre + ", dni=" + dni + "]";
 	}
-	public Alumno(String nombre, String dni) {
+	public Persona(String nombre, String dni) {
 		super();
 		this.nombre = nombre;
 		this.dni = dni;
@@ -45,4 +47,4 @@ public class Alumno {
 	
 	
 	
-}
+	}
