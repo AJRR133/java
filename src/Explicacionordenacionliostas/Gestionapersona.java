@@ -21,7 +21,7 @@ public class Gestionapersona {
 	lista.add(alumno3);
 	lista.add(alumno4); 
 
-     Collections.sort(lista);
+    //Collections.sort(lista);
 
 }
 	

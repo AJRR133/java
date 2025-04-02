@@ -57,7 +57,8 @@ public class Equipo {
 			System.out.println("alumno añadido");
 		}
 	}
-
+	
+	
 
 }
 	
