@@ -1,5 +1,6 @@
 package Repositorioboletinordenacionejercicio2;
 
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -34,12 +35,55 @@ public class Historial {
 		return Objects.equals(registro, other.registro);
 	}
 
-	public Historial(Set<Paginaweb> registro) {
+	public Historial() {
 		super();
-		this.registro = registro;
+		this.registro = new TreeSet<Paginaweb>() ;
 	}
 	
+	public void añadirpagina(Paginaweb a) throws Historialexception {
+		if(a.getFechayhora() == null) {
+			a.setFechayhora(LocalDate.now());
+			registro.add(a);
+			System.out.println("Pagina añadida correctamente");
+		} else if(a.getFechayhora() != null){
+			registro.add(a);
+			System.out.println("Pagina añadida correctamente");
+
+		}else if(a.getFechayhora().isAfter(LocalDate.now())) {
+			throw new Historialexception("No es posible añadir una pagina web con una fecha futura");
+		}
+		
+	}
 	
+	public Set<Paginaweb> hiscompleto() {
+		return this.registro;
+	}
 	
+	public Set<Paginaweb> hisdia(LocalDate f) {
+		Set<Paginaweb> registrodia = new TreeSet<Paginaweb>();
+		for(Paginaweb cadena : registrodia ) {
+			if(cadena.getFechayhora().equals(f))
+				registrodia.add(cadena);
+		}
+		return registrodia;
+	}
+	
+	public Set<Paginaweb> hisurl(String u){
+		Set<Paginaweb> registrourl = new TreeSet<Paginaweb>();
+		for(Paginaweb cadena : registrourl ) {
+			if(cadena.getUrl().equals(u))
+				registrourl.add(cadena);
+		}
+		return registrourl;
+	}
+	
+	public Set<Paginaweb> borrar(String u){
+		Set<Paginaweb> registromodificado = new TreeSet<Paginaweb>();
+		for(Paginaweb cadena : registromodificado ) {
+			if(cadena.getUrl().equals(u))
+				registromodificado.remove(cadena);
+		}
+		return registromodificado;
+	}
 	
 }

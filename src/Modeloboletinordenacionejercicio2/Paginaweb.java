@@ -3,9 +3,10 @@ package Modeloboletinordenacionejercicio2;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Paginaweb  implements Comparable {
+public class Paginaweb  implements Comparable<Paginaweb> {
 	private String url;
 	private LocalDate fechayhora;
+	
 	public String getUrl() {
 		return url;
 	}
@@ -38,10 +39,11 @@ public class Paginaweb  implements Comparable {
 		this.url = url;
 		this.fechayhora = fechayhora;
 	}
+	
+
 	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(Paginaweb o) {
+		   return this.fechayhora.compareTo(o.fechayhora);
 	}
 	
 	
