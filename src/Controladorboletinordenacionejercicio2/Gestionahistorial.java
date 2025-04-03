@@ -37,11 +37,14 @@ public class Gestionahistorial {
                 case 1:  
                 	// como puedo pedir directamente un objeto tipo paginaweb
                     System.out.print("Dime la pagina para añadir");
-                    Paginaweb pw = 
-        
+                    String url = input.nextLine();
+                    System.out.print("Dime la fecha para añadir");
+                    String fecha = input.nextLine();
+                    Paginaweb  pw = new Paginaweb (url, validarfecha(fecha));
+                    		
                     try {
                         h1.añadirpagina(pw);
-                        System.out.println("Página agregada al historial.");
+               
                     } catch (Historialexception e) {
                         System.out.println( e.getMessage());
                     }
@@ -55,17 +58,17 @@ public class Gestionahistorial {
                 case 3:  
                 	// y para pedir una fecha por scanner?
                     System.out.print("Fecha de historial ");
-                    LocalDate fechaInput = input.nextLine();
+                    String fechaInput = input.nextLine();
 
-                    System.out.println(h1.hisdia(fechaInput));
-                    
+                    System.out.println(h1.hisdia(validarfecha(fechaInput)));
+                    break;
 
                 case 4: 
                     System.out.print("URL historial");
                     String urlaver = input.nextLine();
 
                     System.out.println(h1.hisurl(urlaver));
-                   
+                   break;
                     
 
                 case 5: 
@@ -76,7 +79,7 @@ public class Gestionahistorial {
                     break;
 
                 case 6:  
-                    System.out.println("Nos vemos con ne,0");
+                    System.out.println("Nos vemos con nemo");
                     salir = true;
                     break;
 
@@ -86,5 +89,12 @@ public class Gestionahistorial {
             }
         }
 	}
+	
+	public static LocalDate validarfecha(String fecha) {
+		
+		LocalDate fechafinal = LocalDate.parse(fecha);
+		
+	return fechafinal;
+			}
 
 }

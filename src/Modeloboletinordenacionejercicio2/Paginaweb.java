@@ -45,6 +45,10 @@ public class Paginaweb  implements Comparable<Paginaweb> {
 	public int compareTo(Paginaweb o) {
 		   return this.fechayhora.compareTo(o.fechayhora);
 	}
+	@Override
+	public String toString() {
+		return "Paginaweb [url=" + url + ", fechayhora=" + fechayhora + "]";
+	}
 	
 	
 }

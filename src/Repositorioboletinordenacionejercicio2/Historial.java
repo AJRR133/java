@@ -45,10 +45,9 @@ public class Historial {
 			a.setFechayhora(LocalDate.now());
 			registro.add(a);
 			System.out.println("Pagina añadida correctamente");
-		} else if(a.getFechayhora() != null){
+		} else if(a.getFechayhora() != null && a.getFechayhora().isBefore(LocalDate.now())){
 			registro.add(a);
 			System.out.println("Pagina añadida correctamente");
-
 		}else if(a.getFechayhora().isAfter(LocalDate.now())) {
 			throw new Historialexception("No es posible añadir una pagina web con una fecha futura");
 		}
@@ -61,8 +60,8 @@ public class Historial {
 	
 	public Set<Paginaweb> hisdia(LocalDate f) {
 		Set<Paginaweb> registrodia = new TreeSet<Paginaweb>();
-		for(Paginaweb cadena : registrodia ) {
-			if(cadena.getFechayhora().equals(f))
+		for(Paginaweb cadena : registro ) {
+			if(cadena.getFechayhora().equals(f) == true)
 				registrodia.add(cadena);
 		}
 		return registrodia;
@@ -70,8 +69,8 @@ public class Historial {
 	
 	public Set<Paginaweb> hisurl(String u){
 		Set<Paginaweb> registrourl = new TreeSet<Paginaweb>();
-		for(Paginaweb cadena : registrourl ) {
-			if(cadena.getUrl().equals(u))
+		for(Paginaweb cadena : registro ) {
+			if(cadena.getUrl().equals(u) == true)
 				registrourl.add(cadena);
 		}
 		return registrourl;
@@ -79,11 +78,17 @@ public class Historial {
 	
 	public Set<Paginaweb> borrar(String u){
 		Set<Paginaweb> registromodificado = new TreeSet<Paginaweb>();
+		registromodificado = registro;
 		for(Paginaweb cadena : registromodificado ) {
-			if(cadena.getUrl().equals(u))
+			if(cadena.getUrl().equals(u) == true)
 				registromodificado.remove(cadena);
 		}
 		return registromodificado;
+	}
+
+	@Override
+	public String toString() {
+		return "Historial [registro=" + registro + "]";
 	}
 	
 }
