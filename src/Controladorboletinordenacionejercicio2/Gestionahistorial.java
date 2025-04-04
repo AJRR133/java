@@ -96,5 +96,4 @@ public class Gestionahistorial {
 		
 	return fechafinal;
 			}
-
 }
