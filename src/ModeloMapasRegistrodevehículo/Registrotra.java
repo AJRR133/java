@@ -37,11 +37,11 @@ public Boolean agregarvehiculo(Rematri r , Vehiculo v) {
 }
 public boolean registrarrema (Rematri r) {
 	boolean regis = false;
-	Vehiculo vant = listave.get(r.g)
-	Vehiculo vact = null;
-	if(listave.containsKey(r.getNumbastidor())) {
-		v.setMatricula(r.getMatriculafin());
+	if(listave.containsValue(r.getNumbastidor())){
+		Vehiculo v = listave.get(r);
+		listave.put(r, v);
 	}
+	
 	return regis;
 }
 
