@@ -8,25 +8,32 @@ private String nombre;
 private String email;
 private int contadorid;
 
-protected int getId() {
+
+
+public int getId() {
 	return id;
 }
-protected void setId(int id) {
+public void setId(int id) {
 	this.id = id;
 }
-protected String getNombre() {
+public String getNombre() {
 	return nombre;
 }
-protected void setNombre(String nombre) {
+public void setNombre(String nombre) {
 	this.nombre = nombre;
 }
-protected String getEmail() {
+public String getEmail() {
 	return email;
 }
-protected void setEmail(String email) {
+public void setEmail(String email) {
 	this.email = email;
 }
-
+public int getContadorid() {
+	return contadorid;
+}
+public void setContadorid(int contadorid) {
+	this.contadorid = contadorid;
+}
 @Override
 public int hashCode() {
 	return Objects.hash(id);
@@ -42,7 +49,7 @@ public boolean equals(Object obj) {
 	Usuario other = (Usuario) obj;
 	return id == other.id;
 }
-public Usuario(int id, String nombre, String email) {
+public Usuario( String nombre, String email) {
 	super();
 	this.id = contadorid++;
 	this.nombre = nombre;

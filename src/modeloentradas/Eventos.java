@@ -1,10 +1,11 @@
 package modeloentradas;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.TreeSet;
 
-public class Eventos implements Comparable<Eventos> {
+public class Eventos implements Comparator<Eventos> , Comparable<Eventos> {
 private String nombre;
 private LocalDate Fechaevento;
 private String lugar;
@@ -68,18 +69,36 @@ public Eventos(String nombre, LocalDate fechaevento, String lugar, TreeSet<Reser
 	this.lugar = lugar;
 	this.listareservas = new TreeSet<Reserva>();
 }
+
+
 @Override
-public int compareTo(Eventos o) {
-	int resultadofecha = Fechaevento.compareTo(o.getFechaevento());
-	int resultadonombre = nombre.compareTo(o.getNombre());
-	int resultado = 0;
-	
-	if( resultadofecha !=0 && resultadonombre != 0) {
-		resultado = 1;
+public int compare(Eventos o1, Eventos o2) {
+	int comparar = o1.getFechaevento().compareTo(o2.getFechaevento());
+	if( comparar == 0) {
+		comparar = o1.getNombre().compareTo(o2.getNombre());
 	}
-	return resultado;
+	return comparar;
+
+
 }
 
+public void agregarReserva(Reserva reserva1) {
+	listareservas.add(reserva1);
+	
+}
 
+@Override
+public int compareTo(Eventos o) {
+	
+        // Primero comparar por fecha
+        int comparacionFecha = this.Fechaevento.compareTo(o.getFechaevento());
+        
+        if (comparacionFecha != 0) {
+            return comparacionFecha;  // Si las fechas son diferentes, se devuelve el resultado
+        }
+        
+        // Si las fechas son iguales, se compara por nombre
+        return this.nombre.compareTo(o.getNombre());
+    }
 
 }

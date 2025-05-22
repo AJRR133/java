@@ -3,7 +3,7 @@ package modeloentradas;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Reserva {
+public class Reserva implements Comparable<Reserva> {
 private int id;
 private LocalDate fechareserva;
 private Estado estadoreserva;
@@ -59,6 +59,10 @@ public Reserva(int id, LocalDate fechareserva, Estado estadoreserva, Usuario usu
 	this.fechareserva = fechareserva;
 	this.estadoreserva = estadoreserva;
 	this.usuarioreserva = usuarioreserva;
+}
+@Override
+public int compareTo(Reserva o) {
+	return Integer.compare(this.id, o.getId());
 }
 
 

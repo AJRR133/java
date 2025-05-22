@@ -64,8 +64,48 @@ public Reserva devolvereserva(int id, String nombre, LocalDate Fecha) {
   }
 }
 
-return r;} 
+return r;
+}
+public void agregarreserva(String email, int id) throws ReservaException{
+	for(Eventos s : listaeventos) {
+		for(Reserva r : s.getListareservas()) {
+			if(r.getId() == id) {
+			Usuario u = r.getUsuarioreserva();
+				if(u.getEmail().equals(email)) {
+					listaeventos.add(s);
+				} else {
+			        throw new ReservaException("No existe dicho evento");
+				}
+		}else {
+		throw new ReservaException("No existe dicho evento");
+		}
+			}
+		}
+	}
+
+public void modificarreserva(int idreserva, String nombreevento, LocalDate Fechaevento, Usuario us) throws ReservaException{
+	 Reserva modi;
+	 for(Eventos s :listaeventos) {
+		 if(s.getNombre().equals(nombreevento) && s.getFechaevento().equals(Fechaevento)) {
+			  for (Reserva r : s.getListareservas()) {
+				 if(r.getId() == idreserva && r.getUsuarioreserva().equals(us)) {
+				s.getListareservas().add(r);
+				 } else {
+					 throw new ReservaException("No existe una reserva con ese identificador asociada a ese evento");
+				 }
+			  }
+		 } else {
+			 throw new ReservaException("No existe  evento con ese nombre y fecha");
+		 }
+	 }
+	
+}
+
+
+
+
 
 
 
 }
+
