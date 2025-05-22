@@ -59,7 +59,7 @@ public class Centrolo {
 	@Override
 	public String toString() {
 		return "Centrolo [id=" + id + ", nombre=" + nombre + ", ciudad=" + ciudad + ", numcomedores=" + numcomedores
-				+ ", trabajadores=" + trabajadores + "]";
+				+ "]";
 	}
 	public Centrolo(int id, String nombre, String ciudad, int numcomedores, ArrayList<Trabajador> trabajadores) {
 		super();
@@ -71,15 +71,15 @@ public class Centrolo {
 	}
 	
 	public void agregartrabajador (Trabajador t) throws BancoException{
+		if(trabajadores.size()>0) {
 		for(Trabajador a : trabajadores) {
 			if(a.getDni().equals(t.getDni())) {
-			
 				throw new BancoException("El trabajador ya pertenece a el centro");
-			} else {
-				trabajadores.add(t);
 			}
+			}trabajadores.add(t);
+		} else {
+			trabajadores.add(t);
 		}
-	
 	}
 	
 	

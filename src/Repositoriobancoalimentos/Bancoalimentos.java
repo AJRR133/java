@@ -50,10 +50,10 @@ public class Bancoalimentos {
 		for (Centrolo b : centros) {
 			if(c.getId() == b.getId()) {
 				throw new BancoException("El id ya existe");
-			} else {
+			}}
 				centros.add(c);
-			}
-		}} else {
+		
+		} else {
 			centros.add(c);
 		}
 	}
